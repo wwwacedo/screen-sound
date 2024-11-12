@@ -1,7 +1,9 @@
 ﻿// Screen Sound
 
 string mensagemDeBoasVindas = "Boas vindas ao Screen Sound";
-List<string> listaDasBandas = new List<string> { "Kid Abelha", "Skank", "Luxúria" };
+Dictionary<string, List<int>> bandasRegistradas = new Dictionary<string, List<int>>();
+bandasRegistradas.Add("Linkin Park", new List<int> { 10, 9, 8, 10, 6 });
+bandasRegistradas.Add("Metallica", new List<int> { 10, 7, 8, 3, 6 });
 
 void ExibirLogo()
 // https://fsymbols.com/pt/geradores/
@@ -58,12 +60,10 @@ void ExibirOpcoesDoMenu()
 void RegistrarBanda()
 {
 	Console.Clear();
-	Console.WriteLine("**********************");
-	Console.WriteLine("Registro de bandas");
-	Console.WriteLine("**********************\n");
+	ExibirTituloDaOpcao("Registrar banda");
 	Console.Write("Digite o nome da banda que deseja registrar: ");
 	string nomeDaBanda = Console.ReadLine()!;
-	listaDasBandas.Add(nomeDaBanda);
+	bandasRegistradas.Add(nomeDaBanda, new List<int>());
 	Console.WriteLine($"\nA banda {nomeDaBanda} foi registrada com sucesso!");
 	Thread.Sleep(2000);
 	Console.Clear();
@@ -73,15 +73,13 @@ void RegistrarBanda()
 void MostrarBandasRegistradas()
 {
 	Console.Clear();
-	Console.WriteLine("************************************");
-	Console.WriteLine("Exibindo todas as bandas registradas");
-	Console.WriteLine("************************************\n");
+	ExibirTituloDaOpcao("Bandas registradas");
 	// for (int i = 0; i < listaDasBandas.Count; i++)
 	// {
 	// 	Console.WriteLine($"Banda: {listaDasBandas[i]}");;
 	// }
 	
-	foreach (var banda in listaDasBandas)
+	foreach (var banda in bandasRegistradas.Keys)
 	{
 		Console.WriteLine($"Banda: {banda}");
 	}
@@ -90,6 +88,15 @@ void MostrarBandasRegistradas()
 	Console.ReadKey();
 	Console.Clear();
 	ExibirOpcoesDoMenu();
+}
+
+void ExibirTituloDaOpcao(string titulo)
+{
+    int quantidadeDeLetras = titulo.Length;
+    string asteriscos = string.Empty.PadLeft(quantidadeDeLetras, '*');
+    Console.WriteLine(asteriscos);
+    Console.WriteLine(titulo);
+    Console.WriteLine(asteriscos + "\n");
 }
 
 ExibirOpcoesDoMenu();
