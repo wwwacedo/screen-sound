@@ -2,7 +2,7 @@ using System;
 
 namespace ScreenSound.Modelos;
 
-public class Genero
+internal class Genero
 {
 	public Genero(string nome)
 	{
