@@ -1,6 +1,6 @@
 using System;
 
-namespace ScreenSound;
+namespace ScreenSound.Modelos;
 
 public class Genero
 {
