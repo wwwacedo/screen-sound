@@ -10,8 +10,13 @@ public class Musica
 	public int Duracao { get; set; }
 	public bool Disponivel { get; set; }
 	public string DescricaoResumida => $"A musica '{Nome}' pertence ao artista {Artista}";
+	public Genero Genero { get; set; }
 
-	
+	public Musica()
+	{
+		Genero = new Genero();
+	}
+
 	public void ExibirFichaTecnica()
 	{
 		System.Console.WriteLine($"Nome: {Nome}");
