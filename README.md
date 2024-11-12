@@ -32,3 +32,12 @@ public string DescricaoResumida
 public string DescricaoResumida => $"A musica '{Nome}' pertence ao artista '{Artista}'";
 ```
 
+#### Instanciando objeto com propriedades opcionais
+
+```csharp
+Musica musica1 = new Musica(queen, "Love of My Life", rock) {
+  Duracao = 213,
+  Disponivel = true
+};
+```
+

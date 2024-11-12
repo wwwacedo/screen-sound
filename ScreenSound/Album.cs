@@ -4,11 +4,18 @@ namespace ScreenSound;
 
 public class Album
 {
+
+	// Construtor
+	public Album(string nome)
+	{
+		Nome = nome;
+	}
+
 	// Atributos
 	private List<Musica> musicas = new List<Musica>();
 
 	// Propriedades 
-	public string Nome { get; set; }
+	public string Nome { get; }
 	public int DuracaoTotal => musicas.Sum(musica => musica.Duracao);
 
 	// Métodos

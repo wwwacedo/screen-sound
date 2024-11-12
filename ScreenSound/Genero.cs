@@ -4,5 +4,9 @@ namespace ScreenSound;
 
 public class Genero
 {
-	public string Nome { get; set; }
+	public Genero(string nome)
+	{
+		Nome = nome;
+	}
+	public string Nome { get; }
 }
